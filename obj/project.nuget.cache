@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "zbHWh2L5uzPUxqIclB2FNZkwpo0dGYREBY6/IrlZ2/BIrSDht0bHSnDPVVD4Rtgj0Ti1j5B5UiwUAtgNaEmx9Q==",
+  "dgSpecHash": "O+w2zmlyeeSGanqTQfg9D3uQkryOZYRw3+VfJUvpCrWeIKKKK9QbHA8fAv84DWdX4/botiJqni52c+XV0xf3kg==",
   "success": true,
-  "projectFilePath": "C:\\mvp-mct-data\\apps_for_demos\\web-application-demo\\WebApplicationDemo\\WebApplicationDemo.csproj",
+  "projectFilePath": "C:\\_my-documents_\\github\\private\\azure-learn-demo-app\\WebApplicationDemo.csproj",
   "expectedPackageFiles": [
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\microsoft.aspnetcore.html.abstractions\\2.2.0\\microsoft.aspnetcore.html.abstractions.2.2.0.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\microsoft.aspnetcore.razor\\2.2.0\\microsoft.aspnetcore.razor.2.2.0.nupkg.sha512",

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\mvp-mct-data\\apps_for_demos\\web-application-demo\\WebApplicationDemo\\WebApplicationDemo.csproj": {}
+    "C:\\_my-documents_\\github\\private\\azure-learn-demo-app\\WebApplicationDemo.csproj": {}
   },
   "projects": {
-    "C:\\mvp-mct-data\\apps_for_demos\\web-application-demo\\WebApplicationDemo\\WebApplicationDemo.csproj": {
+    "C:\\_my-documents_\\github\\private\\azure-learn-demo-app\\WebApplicationDemo.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\mvp-mct-data\\apps_for_demos\\web-application-demo\\WebApplicationDemo\\WebApplicationDemo.csproj",
+        "projectUniqueName": "C:\\_my-documents_\\github\\private\\azure-learn-demo-app\\WebApplicationDemo.csproj",
         "projectName": "WebApplicationDemo",
-        "projectPath": "C:\\mvp-mct-data\\apps_for_demos\\web-application-demo\\WebApplicationDemo\\WebApplicationDemo.csproj",
+        "projectPath": "C:\\_my-documents_\\github\\private\\azure-learn-demo-app\\WebApplicationDemo.csproj",
         "packagesPath": "C:\\Users\\Wladinho\\.nuget\\packages\\",
-        "outputPath": "C:\\mvp-mct-data\\apps_for_demos\\web-application-demo\\WebApplicationDemo\\obj\\",
+        "outputPath": "C:\\_my-documents_\\github\\private\\azure-learn-demo-app\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
