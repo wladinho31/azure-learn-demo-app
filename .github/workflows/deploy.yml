@@ -3,20 +3,27 @@ name: Deploy App Service and Application
 on: push
 
 jobs:
-     
-  deploy-application:
-    runs-on: windows-latest
+  deployment:
+    runs-on: ubuntu-latest
     steps:
-  
+    
     - name: Log in with Azure
       uses: azure/login@v1
       with:
         creds: ${{ secrets.AZURE_CREDENTIALS }}
-        
-    # Deploy to Azure Web apps
-    - name: Deploy Web App
-      uses: azure/webapps-deploy@v2
+
+    - name: Deploy Infrastructure
+      uses: azure/CLI@v1
       with:
-        app-name: 'cll-demoappgh' # The name of the web app
-        slot-name: 'production'
-        package: . # The name of the output location
+        azcliversion: 2.0.72
+        inlineScript: |
+          az group create --name cll-demo --location northeurope
+          az appservice plan create --name cll-demoappgh-plan --resource-group cll-demo --sku B1
+          az webapp create --name cll-demoappgh --resource-group cll-demo --plan cll-demoappgh-plan
+
+    - name: Deploy Web App
+      uses: azure/CLI@v1
+      with:
+        azcliversion: 2.0.72
+        inlineScript: |
+          az webapp create --name cll-demoapp --resource-group cll-demo --plan cll-demoapp-plan --deployment-source-branch main --deployment-source-url https://github.com/wladinho31/azure-learn-demo-app
