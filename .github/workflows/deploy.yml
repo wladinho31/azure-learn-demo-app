@@ -3,24 +3,7 @@ name: Deploy App Service and Application
 on: push
 
 jobs:
-  deploy-infrastucture:
-    runs-on: ubuntu-latest
-    steps:
-    
-    - name: Log in with Azure
-      uses: azure/login@v1
-      with:
-        creds: ${{ secrets.AZURE_CREDENTIALS }}
-
-    - name: Azure CLI script
-      uses: azure/CLI@v1
-      with:
-        azcliversion: 2.0.72
-        inlineScript: |
-          az group create --name cll-demo --location northeurope
-          az appservice plan create --name cll-demoappgh-plan --resource-group cll-demo --sku B1
-          az webapp create --name cll-demoappgh --resource-group cll-demo --plan cll-demoappgh-plan
-    
+     
   deploy-application:
     runs-on: windows-latest
     steps:
