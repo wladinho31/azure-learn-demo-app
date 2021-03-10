@@ -3,7 +3,7 @@ name: Deploy App Service and Application
 on: push
 
 jobs:
-  build-and-deploy:
+  deploy-infrastucture:
     runs-on: ubuntu-latest
     steps:
     
@@ -21,6 +21,15 @@ jobs:
           az appservice plan create --name cll-demoappgh-plan --resource-group cll-demo --sku B1
           az webapp create --name cll-demoappgh --resource-group cll-demo --plan cll-demoappgh-plan
     
+  deploy-application:
+    runs-on: windows-latest
+    steps:
+  
+    - name: Log in with Azure
+      uses: azure/login@v1
+      with:
+        creds: ${{ secrets.AZURE_CREDENTIALS }}
+        
     # Deploy to Azure Web apps
     - name: Deploy Web App
       uses: azure/webapps-deploy@v2
