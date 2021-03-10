@@ -17,13 +17,13 @@ jobs:
       with:
         azcliversion: 2.0.72
         inlineScript: |
-          az group create --name cll-demo --location northeurope
-          az appservice plan create --name cll-demoappgh-plan --resource-group cll-demo --sku B1
-          az webapp create --name cll-demoappgh --resource-group cll-demo --plan cll-demoappgh-plan
+          az group create --name cll-demo --location northeurope --output none
+          az appservice plan create --name cll-demoappgh-plan --resource-group cll-demo --sku B1 --output none
+          az webapp create --name cll-demoappgh --resource-group cll-demo --plan cll-demoappgh-plan --output none
     
     # Deploy to Azure Web apps
     - name: Deploy Web App
       uses: azure/webapps-deploy@v2
       with:
         app-name: cll-demoappgh # The name of the web app
-        package: '.' # The name of the output location
+        package: './' # The name of the output location
