@@ -12,7 +12,7 @@ jobs:
       with:
         creds: ${{ secrets.AZURE_CREDENTIALS }}
 
-    - name: Deploy Infrastructure
+    - name: Azure CLI script
       uses: azure/CLI@v1
       with:
         azcliversion: 2.0.72
@@ -22,8 +22,9 @@ jobs:
           az webapp create --name cll-demoappgh --resource-group cll-demo --plan cll-demoappgh-plan
 
     - name: Deploy Web App
-      uses: azure/CLI@v1
+      uses: azure/webapps-deploy@v2
       with:
-        azcliversion: 2.0.72
-        inlineScript: |
-          az webapp create --name cll-demoapp --resource-group cll-demo --plan cll-demoapp-plan --deployment-source-branch main --deployment-source-url https://github.com/wladinho31/azure-learn-demo-app
+        app-name: 'cll-demoappgh' # The name of the web app
+        slot-name: 'production'
+        package: . # The name of the output location
+
