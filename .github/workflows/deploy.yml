@@ -1,0 +1,29 @@
+name: Deploy App Service and Application
+
+on: push
+
+jobs:
+  build-and-deploy:
+    runs-on: windows-latest
+    steps:
+    
+    - name: Log in with Azure
+        uses: azure/login@v1
+        with:
+        creds: ${{ secrets.AZURE_CREDENTIALS }}
+
+    - name: Azure CLI script
+        uses: azure/CLI@v1
+        with:
+        azcliversion: 2.0.72
+        inlineScript: |
+            az group create --name cll-demo --location northeurope
+            az appservice plan create --name cll-demoappgh-plan --resource-group cll-demo --sku B1
+            az webapp create --name cll-demoappgh --resource-group cll-demo --plan cll-demoappgh-plan
+    
+    # Deploy to Azure Web apps
+    - name: Deploy Web App
+      uses: azure/webapps-deploy@v2
+      with:
+        app-name: cll-demoappgh # The name of the web app
+        package: '.' # The name of the output location
